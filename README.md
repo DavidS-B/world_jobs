@@ -66,4 +66,6 @@ For the third task I just fetched the official [map documentation](https://hexdo
 
 ## Exercise 2: Question on Scalability
 
-If we want the same output than the previous exercise, but with much more data comming in, I will parallelize the code by spawning several processes in the backgroud. Those processes will execute the same tasks but asynchronously so the whole operation will be faster to achieve. We could also think about a vertical scaling by getting a more powerfull CPU and/or more RAM to the machine which executes the code, allowing processes to run faster and to have more of them running at the same time.
+If we want the same output than the previous exercise, but with much more data comming in, I will parallelize the code by spawning several processes in the backgroud. Those processes will execute the same tasks but asynchronously so the whole operation will be faster to achieve.
+
+We could also think about a vertical scaling by getting a more powerfull CPU and/or more RAM to the machine which executes the code, allowing processes to run faster and to have more of them running at the same time.
