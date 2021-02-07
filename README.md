@@ -58,7 +58,8 @@ I had some issues with the first two tasks:
     - a lot of unecessary dependencies were installed
     - each new session took almost 1 minute to start
     - I had to parse the final result to get the continent.
-      So I investigated on how wheretz was working, and discovered that it was using the [topo](https://github.com/pkinney/topo) library to determine if two points are in a polygon. This resolved the issue of the slack overflow [post](https://stackoverflow.com/questions/13905646/get-the-continent-given-the-latitude-and-longitude) I mentionned. Therefore I decided to use it again.
+
+    So I investigated on how wheretz was working, and discovered that it was using the [topo](https://github.com/pkinney/topo) library to determine if two points are in a polygon. This resolved the issue of the slack overflow [post](https://stackoverflow.com/questions/13905646/get-the-continent-given-the-latitude-and-longitude) I mentionned. Therefore I decided to use it again.
 
     . [topo](https://github.com/pkinney/topo) To gain some time and because it was well done, I used the coordinates from the slack post and extended them a bit with this [site](https://www.keene.edu/campus/maps/tool/) to cover more surface. I decided to keep the division of the american continent by south and north as it was not specified in the exercise statement and I thought it could make sense to distinguich both location for jobs reasearch. Then I tested to retrieve all continents from the test-professions.csv file. It resulted in the fast expected behaviour. At the begining I ordered each continent by population, but when I had the final result of my developement I ordered them by number of jobs they had.
 
