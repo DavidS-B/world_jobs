@@ -20,6 +20,8 @@ Run tests:
 mix test
 ```
 
+### Exercise 1
+
 Start the `iex` session:
 
 ```elixir
@@ -29,8 +31,20 @@ iex -S mix
 Then run this function:
 
 ```elixir
-WorldJobs.collect
+WorldJobs.collect_table
 ```
+
+### Exercise 3
+
+Start the application:
+
+```elixir
+mix run --no-halt
+```
+
+Then go to http://localhost:4000 to read the API doc.
+
+Example: http://localhost:4000/lookup or http://localhost:4000/lookup/continent=Africa&profession=Tech
 
 ## Exercise 1: Continents grouping
 
@@ -70,3 +84,17 @@ For the third task I just fetched the official [map documentation](https://hexdo
 If we want the same output than the previous exercise, but with much more data comming in, I will parallelize the code by spawning several processes in the backgroud. Those processes will execute the same tasks but asynchronously so the whole operation will be faster to achieve.
 
 We could also think about a vertical scaling by getting a more powerfull CPU and/or more RAM to the machine which executes the code, allowing processes to run faster and to have more of them running at the same time.
+
+## Exercise 3: API implementation
+
+To do the API implementation, I used two libraries:
+
+. [plug_cowboy](https://github.com/elixir-plug/plug_cowboy) To implement my HTTP server.
+
+. [poison](https://github.com/devinus/poison) To encode a map into the JSON format.
+
+I added two filters to my API _/lookup_ endpoint:
+
+. continent -> to look for a specific continent.
+
+. profession -> to look for a specific profession.

@@ -39,6 +39,10 @@ defmodule WorldJobs do
         %{value_1 | profession => value_2[profession], :Total => value_2[:Total]}
       end)
     end)
+  end
+
+  def collect_table do
+    collect()
     |> Table.format()
   end
 end

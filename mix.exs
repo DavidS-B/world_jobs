@@ -14,7 +14,8 @@ defmodule WorldJobs.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger]
+      extra_applications: [:logger, :plug_cowboy],
+      mod: {WebhookProcessor.Application, []}
     ]
   end
 
@@ -23,9 +24,9 @@ defmodule WorldJobs.MixProject do
     [
       {:nimble_csv, "~> 1.0"},
       {:topo, "~> 0.4.0"},
-      {:table_rex, "~> 3.1.1"}
-      # {:dep_from_hexpm, "~> 0.3.0"},
-      # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
+      {:table_rex, "~> 3.1.1"},
+      {:plug_cowboy, "~> 2.0"},
+      {:poison, "~> 3.1"}
     ]
   end
 end
