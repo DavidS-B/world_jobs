@@ -28,7 +28,7 @@ Start the `iex` session:
 iex -S mix
 ```
 
-Then run this function:
+Then run the following function:
 
 ```elixir
 WorldJobs.collect_table
@@ -66,7 +66,7 @@ I had some issues with the first two tasks:
     - it was insanely slow.
     - it was limited to 1000 API calls by hour.
 
-    . [wheretz](https://github.com/UA3MQJ/wheretz) This librarie resolved an issue encountered with the previous one: there were no calls to external services. However, there were still a few drawbacks:
+    . [wheretz](https://github.com/UA3MQJ/wheretz) This library resolved an issue encountered with the previous one: there were no calls to external services. However, there were still a few drawbacks:
 
     - it was also really slow.
     - a lot of unecessary dependencies were installed
@@ -75,13 +75,13 @@ I had some issues with the first two tasks:
 
     So I investigated on how wheretz was working, and discovered that it was using the [topo](https://github.com/pkinney/topo) library to determine if two points are in a polygon. This resolved the issue of the slack overflow [post](https://stackoverflow.com/questions/13905646/get-the-continent-given-the-latitude-and-longitude) I mentionned. Therefore I decided to use it again.
 
-    . [topo](https://github.com/pkinney/topo) To gain some time and because it was well done, I used the coordinates from the slack post and extended them a bit with this [site](https://www.keene.edu/campus/maps/tool/) to cover more surface. I decided to keep the division of the american continent by south and north as it was not specified in the exercise statement and I thought it could make sense to distinguich both location for jobs reasearch. Then I tested to retrieve all continents from the test-professions.csv file. It resulted in the fast expected behaviour. At the begining I ordered each continent by population, but when I had the final result of my developement I ordered them by number of jobs they had.
+    . [topo](https://github.com/pkinney/topo) To gain some time and because it was well done, I used the coordinates from the slack post and extended them a bit with this [site](https://www.keene.edu/campus/maps/tool/) to cover more surface. I decided to keep the division of the american continent between south and north as it was not specified in the exercise statement and I thought it could make sense to distinguich both locations for jobs reasearch. Then I tested to retrieve all continents from the test-professions.csv file. It resulted in the fast expected behaviour. At the begining I ordered each continent by population, but when I had the final result of my developement I ordered them by number of jobs they had.
 
-For the third task I just fetched the official [map documentation](https://hexdocs.pm/elixir/Map.html), and I used the [table_rex](https://github.com/djm/table_rex) librarie for the final output.
+For the third task, I just consulted the official [map](https://hexdocs.pm/elixir/Map.html) documentation and I used the [table_rex](https://github.com/djm/table_rex) library for the final output.
 
 ## Exercise 2: Question on Scalability
 
-If we want the same output than the previous exercise, but with much more data comming in, I will parallelize the code by spawning several processes in the backgroud. Those processes will execute the same tasks but asynchronously so the whole operation will be faster to achieve.
+If we want the same output than the previous exercise, but with much more data comming in, I will parallelize the code by spawning several processes in the background. Those processes will execute the same tasks but asynchronously so the whole operation will be faster to achieve.
 
 We could also think about a vertical scaling by getting a more powerfull CPU and/or more RAM to the machine which executes the code, allowing processes to run faster and to have more of them running at the same time.
 

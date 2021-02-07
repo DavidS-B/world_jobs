@@ -1,4 +1,8 @@
 defmodule WorldJobs.Geolocation do
+  @moduledoc """
+    Geolocation utility module for the 'world_jobs' application.
+  """
+
   @europe %{
     name: :Europe,
     polygon: %{
@@ -134,6 +138,9 @@ defmodule WorldJobs.Geolocation do
   }
   @continents [@asia, @africa, @europe, @north_america, @south_america, @oceania, @antarctica]
 
+  @doc """
+    Return a continent atom from a tuple of coordinates using the 'topo' library.
+  """
   def get_continent(coordinates),
     do: Enum.find_value(@continents, &(Topo.contains?(&1.polygon, coordinates) && &1.name))
 end

@@ -1,5 +1,6 @@
-defmodule GeolocationTest do
+defmodule WorldJobs.GeolocationTest do
   use ExUnit.Case, async: true
+  alias WorldJobs.Geolocation
   doctest WorldJobs
 
   test "get continent by latitude and longitude" do

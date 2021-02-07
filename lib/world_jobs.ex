@@ -1,5 +1,9 @@
 defmodule WorldJobs do
-  alias WorldJobs.TableFormatter, as: Table
+  @moduledoc """
+    Main module of the 'world_jobs' application.
+  """
+
+  alias WorldJobs.Renderer
   alias WorldJobs.CSVParser, as: CSV
 
   defstruct [
@@ -14,6 +18,17 @@ defmodule WorldJobs do
     :Total
   ]
 
+  @doc """
+    Generate a text-based table for display from a map.
+  """
+  def render_table do
+    collect()
+    |> Renderer.format()
+  end
+
+  @doc """
+    Generate a map from two CSV files.
+  """
   def collect do
     jobs_map = Map.from_struct(__MODULE__)
     professions = CSV.get_professions()
@@ -39,10 +54,5 @@ defmodule WorldJobs do
         %{value_1 | profession => value_2[profession], :Total => value_2[:Total]}
       end)
     end)
-  end
-
-  def collect_table do
-    collect()
-    |> Table.format()
   end
 end
