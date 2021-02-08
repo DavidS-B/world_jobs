@@ -1,7 +1,5 @@
 defmodule WorldJobs do
-  @moduledoc """
-    Main module of the 'world_jobs' application.
-  """
+  @moduledoc "Main module of the `world_jobs` application."
 
   alias WorldJobs.Renderer
   alias WorldJobs.CSVParser, as: CSV
@@ -18,17 +16,15 @@ defmodule WorldJobs do
     :Total
   ]
 
-  @doc """
-    Generate a text-based table for display from a map.
-  """
+  @doc "Generate a text-based table for display from a map."
+  @spec render_table() :: String.t() | no_return
   def render_table do
     collect()
     |> Renderer.format()
   end
 
-  @doc """
-    Generate a map from two CSV files.
-  """
+  @doc "Generate a map from two CSV files."
+  @spec collect() :: map
   def collect do
     jobs_map = Map.from_struct(__MODULE__)
     professions = CSV.get_professions()

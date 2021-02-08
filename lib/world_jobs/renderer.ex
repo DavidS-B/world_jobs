@@ -1,13 +1,12 @@
 defmodule WorldJobs.Renderer do
-  @moduledoc """
-    Text-based table module renderer for the 'world_jobs' application.
-  """
+  @moduledoc "Text-based table module renderer for the 'world_jobs' application."
 
   alias TableRex.Table
 
   @doc """
     Generate a text-based table for display from a map.
   """
+  @spec format(map()) :: String.t() | no_return
   def format(map) do
     header = [
       "",

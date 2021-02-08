@@ -1,7 +1,7 @@
 defmodule WebhookProcessor.Endpoint do
   @moduledoc """
-  A Plug responsible for logging request info, parsing request body's as JSON,
-  matching routes, and dispatching responses.
+    A Plug responsible for logging request info, parsing request body's as JSON,
+    matching routes, and dispatching responses.
   """
 
   use Plug.Router

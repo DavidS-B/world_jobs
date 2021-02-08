@@ -1,4 +1,7 @@
 defmodule WorldJobs.GeolocationTest do
+  @moduledoc """
+    Tests for the `WorldJobs.Geolocation` module
+  """
   use ExUnit.Case, async: true
   alias WorldJobs.Geolocation
   doctest WorldJobs
